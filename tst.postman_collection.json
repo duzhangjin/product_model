@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "51967b45-7b41-48a2-9017-91671ccb4932",
+		"name": "tst",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://192.168.1.43:8080/predict",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"model_name\":\"\",\n \"b64_frame\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.1.43:8080/predict",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"43"
+					],
+					"port": "8080",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tttt",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}

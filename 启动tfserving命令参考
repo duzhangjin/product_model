@@ -1,0 +1,3 @@
+sudo docker run -p 8501:8501 --mount type=bind,source=/home/forest/tensorflow/models-master/research/object_detection/dataset/pb,target=/models/helmet -e MODEL_NAME=helmet -t tensorflow/serving
+
+

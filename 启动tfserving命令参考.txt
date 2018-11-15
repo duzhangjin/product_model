@@ -1,0 +1,20 @@
+docker run -it -p 8500:8500 tensorflow/serving:latest-devel
+
+#将模型复制到容器中
+docker cp /root/product_model/pb/2  64074e5b3382:/online_model
+
+--mount：   表示要进行挂载
+source：    指定要运行部署的模型地址， 也就是挂载的源，这个是在宿主机上的模型目录
+target:     这个是要挂载的目标位置，也就是挂载到docker容器中的哪个位置，这是docker容器中的目录
+-t:         指定的是挂载到哪个容器
+-p:         指定主机到docker容器的端口映射
+docker run: 启动这个容器并启动模型服务（这里是如何同时启动容器中的模型服务的还不太清楚）
+ 
+综合解释：
+         将source目录中的例子模型，挂载到-t指定的docker容器中的target目录，并启动
+docker run -p 8500:8500 --mount type=bind,source=/root/product_model/pb,target=/models/helmet -e MODEL_NAME=helmet -t tensorflow/serving &
+
+#重启docker服务
+systemctl restart  docker
+ 
+
